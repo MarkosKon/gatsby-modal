@@ -26,6 +26,7 @@ const modalStyles = {
     maxWidth: "960px",
     margin: "32px auto",
     padding: 0,
+    border: 0,
   },
 }
 
@@ -81,7 +82,6 @@ const InstaPostTemplate = ({
           <div
             sx={{
               bg: "background",
-              p: [3, 4],
               display: "flex",
               flexDirection: "column",
             }}
@@ -89,7 +89,13 @@ const InstaPostTemplate = ({
             <Link
               to="/"
               aria-label="close modal"
-              sx={{ alignSelf: "flex-end", width: "60px", py: 2, px: 3 }}
+              sx={{
+                alignSelf: "flex-end",
+                width: "60px",
+                py: 2,
+                px: 3,
+                m: [3, 4],
+              }}
               onClick={e => {
                 e.preventDefault()
                 closeModal()
@@ -97,10 +103,10 @@ const InstaPostTemplate = ({
             >
               <Times sx={{ fontSize: 6, color: "accent" }} />
             </Link>
-            <h1 sx={{ mb: 2 }}>
+            <h1 sx={{ mb: 2, px: [3, 4] }}>
               Posted by {username} on {timestamp}
             </h1>
-            <div>
+            <div sx={{ px: [3, 4] }}>
               <small sx={{ mr: 3 }}>
                 <Comment sx={{ color: "secondary", fontSize: 3 }} /> {comments}
               </small>
@@ -108,7 +114,7 @@ const InstaPostTemplate = ({
                 <Heart sx={{ color: "secondary", fontSize: 3 }} /> {likes}
               </small>
             </div>
-            <p sx={{ mt: 4, order: [1, 0] }}>{caption}</p>
+            <p sx={{ mt: 4, order: [1, 0], px: [3, 4] }}>{caption}</p>
             <Img title={id} fluid={fluid} sx={{ mt: [4, 2], order: [0, 1] }} />
           </div>
         </Styled.root>
