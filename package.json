@@ -11,6 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "deploy": "netlify deploy --dir=public",
+    "deploy:prod": "netlify deploy --dir=public --prod",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
