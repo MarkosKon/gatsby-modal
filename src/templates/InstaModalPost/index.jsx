@@ -14,19 +14,18 @@ import "./style.css"
 Modal.setAppElement(`#___gatsby`)
 
 const modalStyles = {
-  content: {
-    top: "0",
-    left: "0",
-    right: "0",
-    bottom: "0",
-    border: null,
-    background: "transparent",
-    padding: "0",
-  },
   overlay: {
-    overflow: "auto",
-    zIndex: 10,
     backgroundColor: "rgba(0, 0, 0, 0.58)",
+  },
+  content: {
+    position: "relative",
+    top: "auto",
+    left: "auto",
+    right: "auto",
+    bottom: "auto",
+    maxWidth: "960px",
+    margin: "32px auto",
+    padding: 0,
   },
 }
 
@@ -79,11 +78,18 @@ const InstaPostTemplate = ({
         closeTimeoutMS={modalCloseTimeout}
       >
         <Styled.root>
-          <Container sx={{ bg: "background", p: [3, 4] }}>
+          <div
+            sx={{
+              bg: "background",
+              p: [3, 4],
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Link
               to="/"
               aria-label="close modal"
-              sx={{ float: "right", py: 2, px: 3 }}
+              sx={{ alignSelf: "flex-end", width: "60px", py: 2, px: 3 }}
               onClick={e => {
                 e.preventDefault()
                 closeModal()
@@ -102,9 +108,9 @@ const InstaPostTemplate = ({
                 <Heart sx={{ color: "secondary", fontSize: 3 }} /> {likes}
               </small>
             </div>
-            <p sx={{ mt: 4 }}>{caption}</p>
-            <Img title={id} fluid={fluid} />
-          </Container>
+            <p sx={{ mt: 4, order: [1, 0] }}>{caption}</p>
+            <Img title={id} fluid={fluid} sx={{ mt: [4, 2], order: [0, 1] }} />
+          </div>
         </Styled.root>
       </Modal>
     </div>

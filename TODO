@@ -1,10 +1,10 @@
 TODO 
 
 - a11y, check the TODO's
-- close modal when the overlay is clicked
 - next previous buttons when modal is open.
 - user info
 
 Done
 
+- close modal when the overlay is clicked
 - closeModal should emulate the back button navigation
