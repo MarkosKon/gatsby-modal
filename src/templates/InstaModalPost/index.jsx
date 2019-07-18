@@ -84,6 +84,7 @@ const InstaPostTemplate = ({
               bg: "background",
               display: "flex",
               flexDirection: "column",
+              position: "relative",
             }}
           >
             <Link
@@ -94,7 +95,10 @@ const InstaPostTemplate = ({
                 width: "60px",
                 py: 2,
                 px: 3,
-                m: [3, 4],
+                position: "absolute",
+                m: 3,
+                right: 0,
+                top: 0,
               }}
               onClick={e => {
                 e.preventDefault()
@@ -103,19 +107,19 @@ const InstaPostTemplate = ({
             >
               <Times sx={{ fontSize: 6, color: "accent" }} />
             </Link>
-            <h1 sx={{ mb: 2, px: [3, 4] }}>
+            <h1 sx={{ mt: 5, mb: 2, px: [3, 4] }}>
               Posted by {username} on {timestamp}
             </h1>
             <div sx={{ px: [3, 4] }}>
               <small sx={{ mr: 3 }}>
-                <Comment sx={{ color: "secondary", fontSize: 3 }} /> {comments}
-              </small>
-              <small sx={{ mr: 3 }}>
                 <Heart sx={{ color: "secondary", fontSize: 3 }} /> {likes}
               </small>
+              <small sx={{ mr: 3 }}>
+                <Comment sx={{ color: "secondary", fontSize: 3 }} /> {comments}
+              </small>
             </div>
-            <p sx={{ mt: 4, order: [1, 0], px: [3, 4] }}>{caption}</p>
-            <Img title={id} fluid={fluid} sx={{ mt: [4, 2], order: [0, 1] }} />
+            <Img title={id} fluid={fluid} sx={{ mt: 4 }} />
+            <p sx={{ my: 4, px: [3, 5] }}>{caption}</p>
           </div>
         </Styled.root>
       </Modal>

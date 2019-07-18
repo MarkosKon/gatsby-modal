@@ -1,6 +1,7 @@
 TODO 
 
 - a11y, check the TODO's
+- a11y does not return focus on close.
 - next previous buttons when modal is open.
 - user info
 
