@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { jsx, Container, Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { graphql, navigate, PageRenderer } from "gatsby"
 import Img from "gatsby-image"
 import Modal from "react-modal"
