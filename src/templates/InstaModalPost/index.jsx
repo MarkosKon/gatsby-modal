@@ -60,9 +60,8 @@ const InstaPostTemplate = ({
   const [modalOpen, setModalOpen] = useState(true)
   const modalCloseTimeout = 300
   const closeModal = () => {
-    console.log('close modal called')
     setModalOpen(false)
-    setTimeout(() => navigate(`/`, { replace: true }), modalCloseTimeout)
+    setTimeout(() => navigate(`/`), modalCloseTimeout)
   }
   return (
     <div>

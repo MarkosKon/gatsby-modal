@@ -14,8 +14,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     return
   }
 
-  const postTemplate = require.resolve("./src/templates/InstaModalPost/index.jsx")
-  // const postTemplate = require.resolve("./src/templates/InstaPostTemplate.jsx")
+  const postTemplate = require.resolve(
+    "./src/templates/InstaModalPost/index.jsx"
+  )
   result.data.allInstaNode.nodes.forEach(post => {
     createPage({
       path: post.id,
