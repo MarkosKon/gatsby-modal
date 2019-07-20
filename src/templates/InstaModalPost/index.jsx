@@ -40,8 +40,6 @@ const InstaPostTemplate = ({
       localFile: {
         childImageSharp: { fluid },
       },
-      timestamp,
-      username,
     },
   },
 }) => {
@@ -91,26 +89,35 @@ const InstaPostTemplate = ({
               to="/"
               aria-label="close modal"
               sx={{
-                alignSelf: "flex-end",
-                width: "60px",
-                py: 2,
-                px: 3,
+                width: "50px",
+                height: "50px",
                 position: "absolute",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 m: 3,
                 right: 0,
                 top: 0,
+                zIndex: 1,
+                color: "white",
+                borderRadius: "50%",
+                ":hover": {
+                  color: "white",
+                  bg: "#fbf9f926",
+                },
               }}
               onClick={e => {
                 e.preventDefault()
                 closeModal()
               }}
             >
-              <Times sx={{ fontSize: 6, color: "accent" }} />
+              <Times sx={{ fontSize: 4 }} />
             </Link>
-            <h1 sx={{ mt: 5, mb: 2, px: [3, 4] }}>
+            {/* <h1 sx={{ mt: 5, mb: 2, px: [3, 4] }}>
               Posted by {username} on {timestamp}
-            </h1>
-            <div sx={{ px: [3, 4] }}>
+            </h1> */}
+            <Img title={id} fluid={fluid} />
+            <div sx={{ mt: 3, px: [3, 4] }}>
               <small sx={{ mr: 3 }}>
                 <Heart sx={{ color: "secondary", fontSize: 3 }} /> {likes}
               </small>
@@ -118,8 +125,7 @@ const InstaPostTemplate = ({
                 <Comment sx={{ color: "secondary", fontSize: 3 }} /> {comments}
               </small>
             </div>
-            <Img title={id} fluid={fluid} sx={{ mt: 4 }} />
-            <p sx={{ my: 4, px: [3, 5] }}>{caption}</p>
+            <p sx={{ my: 4, px: [3, 4] }}>{caption}</p>
           </div>
         </Styled.root>
       </Modal>
@@ -138,8 +144,6 @@ InstaPostTemplate.propTypes = {
         childImageSharp: PropTypes.shape({ fluid: PropTypes.object.isRequired })
           .isRequired,
       }).isRequired,
-      timestamp: PropTypes.number.isRequired,
-      username: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 }
@@ -158,8 +162,6 @@ export const query = graphql`
           }
         }
       }
-      timestamp
-      username
       comments
       caption
     }
