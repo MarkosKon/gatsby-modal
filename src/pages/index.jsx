@@ -10,7 +10,27 @@ export default ({ data }) => {
   const { username } = posts[0]
   return (
     <Layout>
-      <Styled.h1>{username} Instagram Feed</Styled.h1>
+      {/* <Styled.h1>{username} Instagram Feed</Styled.h1> */}
+      {/* Hardcoding a link to the Instagram account. */}
+      <Styled.h1>
+        <a
+          href="https://www.instagram.com/alicexz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            display: "inline-block",
+            color: "primary",
+            "&:hover": { color: "accent" },
+            "&:active": { color: "accent" },
+            "&:focus": {
+              outline: "1px solid transparent",
+              boxShadow: theme => `0px 0px 0px 2px ${theme.colors.accent}`,
+            },
+          }}
+        >
+          {username} Instagram Feed
+        </a>
+      </Styled.h1>
       <Flex sx={{ flexWrap: "wrap" }}>
         {posts.map(post => (
           <div key={post.id} sx={{ width: ["100%", "100%", "50%", "33%"] }}>
