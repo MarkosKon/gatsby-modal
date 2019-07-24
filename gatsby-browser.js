@@ -1,3 +1,5 @@
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
 // This only works if in the modal page you add a
 // Link to the homepage.
 export const onPrefetchPathname = ({ loadPage }) => {

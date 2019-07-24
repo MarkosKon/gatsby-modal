@@ -5,6 +5,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import SkipLink from "@affectionatedoor/gatsby-theme-ui/src/components/SkipLink"
 import Header from "@affectionatedoor/gatsby-theme-ui/src/components/Header"
 import ThemeSwitcher from "@affectionatedoor/gatsby-theme-ui/src/components/ThemeSwitcher"
+import { config } from "@fortawesome/fontawesome-svg-core"
+
+// Prevent fontawesome from dynamically adding its css since
+// we do it in gatsby-browser / gatsby-ssr.
+// https://github.com/FortAwesome/react-fontawesome/issues/134
+config.autoAddCss = false
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
