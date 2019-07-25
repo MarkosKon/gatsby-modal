@@ -14,7 +14,6 @@ const Card = ({ id, comments, likes, localFile }) => (
       width: "100%",
       py: [3],
       px: [1, 3],
-      zIndex: 1,
       willChange: "transform",
       transition: "transform 0.25s ease-out",
       ":focus": {
