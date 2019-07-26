@@ -16,7 +16,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@affectionatedoor/gatsby-theme-ui": "^2.0.1",
+    "@affectionatedoor/gatsby-theme-ui": "^3.0.0",
     "gatsby": "^2.13.25",
     "gatsby-source-instagram": "^0.5.1",
     "react": "^16.8.6",
