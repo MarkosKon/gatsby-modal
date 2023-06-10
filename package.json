@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@affectionatedoor/gatsby-theme-ui": "^3.0.0",
-    "gatsby": "^2.13.25",
+    "gatsby": "^4.25.7",
     "gatsby-source-instagram": "^0.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
